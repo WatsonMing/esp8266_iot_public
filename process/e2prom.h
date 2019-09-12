@@ -3,28 +3,28 @@
 
 struct WIFI_CONFIG
 {
-    String SSID;
-    String PASS_WORD;
+    String SSID;      //15
+    String PASS_WORD; //15
 };
 
 struct HTTP_CONFIG
 {
-    String HOST;
-    uint16_t PROT;
+    String HOST;   //16
+    uint16_t PORT; //2
 };
 
 struct MQTT_CONFIG
 {
-    String HOST;
-    uint16_t PASS_WORD;
-    String CLIENT_ID;
-    String USER_NAME;
-    String PASS_WORD;
+    String HOST;        //16
+    uint16_t PORT; //2
+    String CLIENT_ID;   //11
+    String USER_NAME;   //16
+    String PASS_WORD;   //16
 };
 
 template <class T>
-void write_config(uint16_t,T);
+void write_config(uint16_t, T);
 template <class T>
-void read_config(uint16_t,T);
+void read_config(uint16_t, T);
 
 #endif

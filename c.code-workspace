@@ -29,7 +29,8 @@
 			"xstring": "cpp",
 			"xutility": "cpp",
 			"string": "cpp",
-			"unordered_map": "cpp"
+			"unordered_map": "cpp",
+			"thread": "cpp"
 		}
 	}
 }

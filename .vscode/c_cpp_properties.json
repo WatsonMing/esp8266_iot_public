@@ -3,6 +3,10 @@
         {
             "name": "Win32",
             "includePath": [
+                "C:\\Users\\Administrator\\Documents\\Arduino\\libraries\\ArduinoThread",
+                "C:\\Users\\Administrator\\Documents\\Arduino\\libraries\\PubSubClientTools",
+                "C:\\Users\\Administrator\\Documents\\Arduino\\libraries\\PubSubClient\\src",
+                "G:\\Arduino\\process\\**",
                 "C:\\Users\\Administrator\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\**",
                 "C:\\Users\\Administrator\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.5.2\\**"
             ],
