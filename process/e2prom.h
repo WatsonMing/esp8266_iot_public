@@ -1,10 +1,3 @@
-/*
- * @Descripttion: 
- * @version: 
- * @Author: donmine
- * @LastEditors: donmine
- * @LastEditTime: 2019-09-12 14:45:42
- */
 #ifndef __E2PROM_H__
 #define __E2PROM_H__
 
@@ -30,7 +23,8 @@ struct MQTT_CONFIG
 };
 
 template <class T>
-void write_config(uint16_t,T const &);
+void write_config(uint16_t,T);
 template <class T>
-void read_config(uint16_t,T const &);
+void read_config(uint16_t,T);
+
 #endif

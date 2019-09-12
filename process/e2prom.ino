@@ -7,7 +7,7 @@ template <class T>
  * @param {type} 
  * @return: 
  */
-void write_config(uint16_t addr,T const & config)
+void write_config(uint16_t addr,T config)
 {
     EEPROM.begin(512);
     EEPROM.put(addr,config);
@@ -20,7 +20,7 @@ template <class T>
  * @param {type} 
  * @return: 
  */
-void read_config(uint16_t,T const & config)
+void read_config(uint16_t,T config)
 {
     EEPROM.begin(512);
     EEPROM.get(addr,config);
