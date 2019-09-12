@@ -3,10 +3,10 @@
  * @version: 
  * @Author: donmine
  * @LastEditors: donmine
- * @LastEditTime: 2019-09-12 17:04:20
+ * @LastEditTime: 2019-09-12 20:45:29
  */
 #include "network.h"
-#include <e2prom.h>
+
 
 WiFiClient wifiClient;
 PubSubClient client(wifiClient);
@@ -18,7 +18,7 @@ MQTT_CONFIG mqtt_config;
  * @param {type} 
  * @return: 
  */
-void read()
+void read_all()
 {
     read_config(EEPROM_WIFI,wifi_config);
     read_config(EEPROM_MQTT,mqtt_config);
@@ -31,9 +31,9 @@ void read()
  */
 void wifi_start()
 {
-    read();//读取配置文件
+    read_all();//读取配置文件
     WiFi.mode(WIFI_STA);
-    WiFi.begin(wifi_config.SSID, wifi_config.PASS_WORD);
+    WiFi.begin((char *)(wifi_config.SSID), (char *)(wifi_config.PASS_WORD));
     while (WiFi.status() != WL_CONNECTED)
     {
         delay(500);
@@ -45,69 +45,45 @@ void wifi_start()
     Serial.println(WiFi.localIP());
 }
 
-void wifi_connect()
+void mqtt_connect()
 {
-    client.setServer(mqtt_config.HOST, mqtt_config.PORT);
+    client.setServer((char *)(mqtt_config.HOST), (uint16_t)(mqtt_config.PORT));
     client.setCallback(callback);
     reconnect();
 }
 
 // function called when a MQTT message arrived
-void callback(char *p_topic, byte *p_payload, unsigned int p_length)
+void callback((char *)p_topic, byte *p_payload,uint16_t p_length)
 {
     // concat the payload into a string
+    uint8_t i;
     String payload;
     Serial.println("INFO:callback...");
-    for (uint8_t i = 0; i < p_length; i++)
+    for (i = 0; i < p_length; i++)
     {
         payload.concat((char)p_payload[i]);
     }
-
     // handle message topic
-    // if (String(MQTT_LASOR_COMMAND_TOPIC).equals(p_topic))
-    // {
-    //     if (payload.equals(String(DEVICE_ON)))
-    //     {
-    //         lightSstate = true;
-    //     }
-    //     else if (payload.equals(String(DEVICE_OFF)))
-    //     {
-    //         lightSstate = false;
-    //     }
-    //     setLasorState();
-    //     publishLasorState();
-    // }
-    // else if (String(MQTT_FAN_COMMAND_TOPIC).equals(p_topic))
-    // {
-    //     if (payload.equals(String(DEVICE_ON)))
-    //     {
-    //         fanState = true;
-    //     }
-    //     else if (payload.equals(String(DEVICE_OFF)))
-    //     {
-    //         fanState = false;
-    //     }
-    //     setFanState();
-    //     publishFanState();
-    // }
+    if (String(MQTT_SUBSCRIBE).equals(p_topic))
+    {
+        Serial.println("server>>");
+        Serial.println(payload);
+    }
 }
 
 void reconnect()
 {
     // Loop until we're reconnected
-    while (!client.connected())
+    while (!client.connect((char *)(mqtt_config.CLIENT_ID), (char *)(mqtt_config.USER_NAME), (char *)(mqtt_config.PASS_WORD)))
     {
         Serial.print("INFO: Attempting MQTT connection...");
         // Attempt to connect
-        if (client.connect(mqtt_config.CLIENT_ID, mqtt_config.USER_NAME, mqtt_config.PASS_WORD))
+        if (client.connect((char *)(mqtt_config.CLIENT_ID), (char *)(mqtt_config.USER_NAME), (char *)(mqtt_config.PASS_WORD)))
         {
             Serial.println("INFO: connected");
             // Once connected, publish an announcement...
-            // publishLasorState();
-            // publishFanState();
-            // ... and resubscribe
-            // client.subscribe(MQTT_LASOR_COMMAND_TOPIC);
-            // client.subscribe(MQTT_FAN_COMMAND_TOPIC);
+            client.subscribe((char *)(MQTT_SUBSCRIBE));
+            client.publish((char *)(MQTT_PUBLISH),"hello server",strlen("hello server"),false);
         }
         else
         {

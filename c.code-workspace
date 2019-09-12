@@ -30,7 +30,9 @@
 			"xutility": "cpp",
 			"string": "cpp",
 			"unordered_map": "cpp",
-			"thread": "cpp"
+			"thread": "cpp",
+			"istream": "cpp",
+			"*.tcc": "cpp"
 		}
 	}
 }
