@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"terminal.integrated.env.windows": {
+			"PATH": "C:\\Users\\Administrator\\.platformio\\penv\\Scripts;C:\\Users\\Administrator\\.platformio\\penv;F:\\stm32\\asm;C:\\Program Files (x86)\\NetSarang\\Xshell 6\\;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\java\\jdk1.8.0_191\\bin;C:\\java\\jdk1.8.0_191\\jre\\bin;D:\\AndroidSDK\\emulator;C:\\ffmpeg\\\\bin;D:\\AndroidSDK\\platform-tools;E:\\VSCode_STM32\\OpenOCD-20190715-0.10.0\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\LLVM\\bin;C:\\Program Files (x86)\\STMicroelectronics\\STM32 ST-LINK Utility\\ST-LINK Utility;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python36\\python.exe;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python36\\;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python37\\Scripts;C:\\Users\\Administrator\\AppData\\Local\\GitHubDesktop\\bin;D:\\Microsoft VS Code\\bin;F:\\stm32\\asm;C:\\Program Files (x86)\\NetSarang\\Xshell 6\\;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\java\\jdk1.8.0_191\\bin;C:\\java\\jdk1.8.0_191\\jre\\bin;D:\\AndroidSDK\\emulator;C:\\ffmpeg\\\\bin;D:\\AndroidSDK\\platform-tools;E:\\VSCode_STM32\\OpenOCD-20190715-0.10.0\\bin;C:\\Program Files\\Git\\cmd;C:\\Program Files\\LLVM\\bin;C:\\Program Files (x86)\\STMicroelectronics\\STM32 ST-LINK Utility\\ST-LINK Utility;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python36\\python.exe;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python36\\;C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python37\\Scripts;C:\\Users\\Administrator\\AppData\\Local\\GitHubDesktop\\bin;D:\\Microsoft VS Code\\bin",
+			"PLATFORMIO_CALLER": "vscode"
+		},
+		"git.ignoreLimitWarning": true,
+		"files.associations": {
+			"functional": "cpp",
+			"system_error": "cpp",
+			"xlocmon": "cpp",
+			"xtr1common": "cpp",
+			"array": "cpp",
+			"tuple": "cpp",
+			"type_traits": "cpp",
+			"utility": "cpp",
+			"deque": "cpp",
+			"iterator": "cpp",
+			"list": "cpp",
+			"vector": "cpp",
+			"xhash": "cpp",
+			"xtree": "cpp",
+			"initializer_list": "cpp",
+			"xstring": "cpp",
+			"xutility": "cpp",
+			"string": "cpp",
+			"unordered_map": "cpp"
+		}
+	}
+}
