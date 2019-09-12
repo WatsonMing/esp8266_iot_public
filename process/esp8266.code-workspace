@@ -3,5 +3,11 @@
 		{
 			"path": "G:\\Arduino"
 		}
-	]
+	],
+	"settings": {
+		"files.associations": {
+			"string": "cpp",
+			"xstring": "cpp"
+		}
+	}
 }
