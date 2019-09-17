@@ -3,7 +3,7 @@
  * @version: 
  * @Author: donmine
  * @LastEditors: donmine
- * @LastEditTime: 2019-09-12 23:08:49
+ * @LastEditTime: 2019-09-17 14:41:41
  */
 
 // template <class T>
@@ -27,6 +27,7 @@ void write_config(struct NETWORK_CONFIG network_config)
 {
     EEPROM.begin(EEPROM_START);
     EEPROM.put(EEPROM_CONFIG, network_config);
+    EEPROM.commit();
     EEPROM.end();
     Serial.println("write config success");
 }
